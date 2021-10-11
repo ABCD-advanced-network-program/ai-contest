@@ -1,0 +1,28 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "123",
+      "is_superuser": false,
+      "username": "user1",
+      "first_name": "User",
+      "last_name": "1",
+      "email": "1@gmail.com",
+      "is_active": true
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "123",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "Admin",
+      "last_name": "1",
+      "email": "0@gmail.com",
+      "is_active": true
+    }
+  }
+]

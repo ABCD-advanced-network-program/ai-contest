@@ -4,6 +4,8 @@
 * Run commands
 ```
 pip install -r ./requirements.txt
+python manage.py migrate ContestAdmin
+python manage.py initdata
 ```
 ## Run
 ```
