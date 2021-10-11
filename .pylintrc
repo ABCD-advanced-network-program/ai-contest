@@ -1,0 +1,10 @@
+[MASTER]
+load-plugins=pylint_django
+django-settings-module=ContestAi.settings
+
+disable=
+  missing-module-docstring,
+  imported-auth-user,
+  wrong-import-order,
+  missing-function-docstring,
+  missing-class-docstring
