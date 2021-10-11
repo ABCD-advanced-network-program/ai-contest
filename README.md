@@ -4,6 +4,9 @@
 * Run commands
 ```
 pip install -r ./requirements.txt
+```
+## Run
+```
 python manage.py runserver
 ```
 * Open new terminal window and run. Before this step, your Redis should be run smoothly
