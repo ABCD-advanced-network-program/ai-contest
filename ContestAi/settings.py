@@ -140,7 +140,7 @@ STATICFILES_DIRS = [
 
 RQ_QUEUES = {
     'default': {
-        'HOST': 'localhost',
+        'HOST': 'redis',
         'PORT': 6379,
         'DB': 0, 
         'DEFAULT_TIMEOUT': 10,
