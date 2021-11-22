@@ -12,11 +12,16 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import environ
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -140,7 +145,7 @@ STATICFILES_DIRS = [
 
 RQ_QUEUES = {
     'default': {
-        'HOST': 'redis',
+        'HOST': env('REDIS_HOST'),
         'PORT': 6379,
         'DB': 0, 
         'DEFAULT_TIMEOUT': 10,
