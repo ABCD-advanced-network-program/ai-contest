@@ -25,7 +25,7 @@ REDIS_HOST=localhost
 or excute command bellow (in Linux)
 
 ```
-cat "REDIS_HOST=localhost" > .env
+echo "REDIS_HOST=localhost" > .env
 ```
 
 - Run server
@@ -53,7 +53,7 @@ REDIS_HOST=redis
 or excute command bellow (in Linux)
 
 ```
-cat "REDIS_HOST=redis" > .env
+echo "REDIS_HOST=redis" > .env
 ```
 
 - Run docker
