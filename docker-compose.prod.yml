@@ -8,3 +8,12 @@ services:
     build: .
     ports:
       - "8000:8000"
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx/certs:/certs
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/options-ssl-nginx.conf:/app/conf/options-ssl-nginx.conf
+    ports:
+      - "80:80"
+      - "443:443"
