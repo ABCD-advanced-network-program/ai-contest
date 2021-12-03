@@ -49,7 +49,10 @@ INSTALLED_APPS = [
     'devs',
     'Auth',
     'ContestAdmin',
-    'ContestParticipant.apps.ContestparticipantConfig'
+    'ContestParticipant.apps.ContestparticipantConfig',
+    
+    'axes',
+    'blacklist',
 ]
 
 MIDDLEWARE = [
@@ -60,6 +63,17 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'blacklist.middleware.BlacklistMiddleware',
+
+    'axes.middleware.AxesMiddleware',
+]
+
+AUTHENTICATION_BACKENDS = [
+    # AxesBackend should be the first backend in the AUTHENTICATION_BACKENDS list.
+    'axes.backends.AxesBackend',
+
+    # Django ModelBackend is the default authentication backend.
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 ROOT_URLCONF = 'ContestAi.urls'
@@ -152,4 +166,8 @@ RQ_QUEUES = {
         'DEFAULT_RESULT_TTL': 10,
     },
 }
-
+REDIS_URL = 'redis://localhost:6379/0'
+BANISH_ENABLED = True
+BANISH_EMPTY_UA = True
+BLACKLIST_RELOAD_PERIOD = 1
+AXES_FAILURE_LIMIT = 6
